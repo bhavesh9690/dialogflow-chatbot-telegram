@@ -14,6 +14,8 @@ const {
   handleFinancialYearSelection,
 } = require("./flows/transactions-history/transactionFlow");
 
+const { handleTransactionTimeRange } = require("./flows/transactions-history/transactionFlowFallback");
+
 const {
   handleFundsCategorySelection,
   handleFundsSelection,
@@ -59,6 +61,7 @@ app.post("/webhook", express.json(), (req, res) => {
   intentMap.set("Fallback-Fund", handleFundFallbackContent)
   intentMap.set("Fallback-Amount", handleIncorrectAmount)
   intentMap.set("Fallback-Invest", handleInvestOptionFallback);
+  intentMap.set("Fallback-TimePeriod", handleTransactionTimeRange)
   agent.handleRequest(intentMap);
 });
 

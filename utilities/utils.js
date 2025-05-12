@@ -1,5 +1,6 @@
 const fs = require('fs');
 const path = require('path');
+const { Payload } = require("dialogflow-fulfillment");
 
 const transactionsDataPath = path.join(__dirname, '../data/transactionhistory.json');
 
@@ -44,4 +45,19 @@ const withContextManagement = (handler, options = {}) => {
     };
 }
 
-module.exports = { withContextManagement, isValidPhoneNumber, getFinancialYearRange, getTransactionsData, saveTransactionsData, clearAllExcept };
+const setUIRichresponse = (text, agent) => {
+    return agent.add(
+      new Payload(
+        agent.TELEGRAM,
+        {
+          telegram: {
+            text,
+            parse_mode: "HTML",
+          },
+        },
+        { rawPayload: true, sendAsMessage: true }
+      )
+    );
+}
+
+module.exports = { withContextManagement, isValidPhoneNumber, getFinancialYearRange, getTransactionsData, saveTransactionsData, clearAllExcept, setUIRichresponse };

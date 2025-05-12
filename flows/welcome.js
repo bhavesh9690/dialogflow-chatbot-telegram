@@ -6,7 +6,7 @@ const { handleTransactionFlow } = require("./transactions-history/transactionFlo
 const { handleInvestFunds } = require("./explore-funds/exploreFundsFlow");
 
 const handleWelcome = (agent) => {
-    clearAllExcept(agent);
+    clearAllExcept(agent, ['contact_available']);
     agent.add(configsData.welcomeText);
     configsData.quickSuggestions.forEach(sug => agent.add(new Suggestion(sug)));
 }

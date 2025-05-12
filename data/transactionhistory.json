@@ -113,6 +113,12 @@
         "amount": 10000,
         "fund_id": "MF002",
         "fund_name": "Beta Income Fund"
+      },
+      {
+        "date": "2025-05-12",
+        "amount": 123,
+        "fund_id": "MF005",
+        "fund_name": "Omega Liquid Fund"
       }
     ]
   },

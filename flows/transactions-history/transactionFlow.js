@@ -1,5 +1,6 @@
 const { Suggestion, Payload } = require('dialogflow-fulfillment');
 const { getFinancialYearRange, withContextManagement, getTransactionsData } = require("../../utilities/utils");
+const { setUIRichresponse } = require("../../utilities/utils");
 
 const handleTransactionHistory = withContextManagement(
     function (agent) {
@@ -26,9 +27,30 @@ const handleTransactionFlow = (agent) => {
 
 const handleFinancialYearSelection = (agent) => {
     const selectedOption = agent.query;
+    const dateRange = agent.context.get('awaiting_time_period')?.parameters?.['date-period'];
     const contact = agent.context.get('contact_available')?.parameters?.['phone-number'];
-    const { start, end } = getFinancialYearRange(selectedOption);
+    let start;
+    let end;
 
+    const date = agent.context.get('awaiting_time_period')?.parameters?.['date'];
+    const date1 = agent.context.get('awaiting_time_period')?.parameters?.['date1'];
+
+    if (date && !date1) {
+        agent.context.set({ name: 'awaiting_time_period', lifespan: 1 });
+        return agent.add("Please enter end Date Range");
+    }
+
+    if (dateRange) {
+        start = new Date(dateRange.startDate);
+        end = new Date(dateRange.endDate);
+    } else {
+        start = getFinancialYearRange(selectedOption).start;
+        end = getFinancialYearRange(selectedOption).end;
+    }
+    if (end > new Date()) {
+        agent.context.set({ name: 'awaiting_time_period', lifespan: 1 });
+        return agent.add("Please enter end Date less than current date");
+    }
     const userData = getTransactionsData().find(tran => tran.mobile === contact);
     const transactions = userData?.transactions || [];
 
@@ -38,7 +60,11 @@ const handleFinancialYearSelection = (agent) => {
     });
 
     if (filtered.length === 0) {
-        agent.add("No transactions found for the selected financial year.");
+        agent.add("No transactions found");
+        agent.add("Do you want to invest ?");
+        agent.add(new Suggestion("Yes"));
+        agent.add(new Suggestion("No"));
+        agent.context.set({ name: 'awaiting_investment_choice', lifespan: 1 });
         return;
     }
 
@@ -50,13 +76,7 @@ const handleFinancialYearSelection = (agent) => {
     });
 
     agent.context.set({ name: 'awaiting_investment_choice', lifespan: 1 });
-    agent.add(new Payload(agent.TELEGRAM, {
-        "telegram": {
-            text: `<pre>${message}</pre>`,
-            parse_mode: "HTML"
-        }
-    }, { rawPayload: true, sendAsMessage: true }));
-
+    setUIRichresponse(`<pre>${message}</pre>`, agent);
     agent.add("Do you want to invest more?");
     agent.add(new Suggestion("Yes"));
     agent.add(new Suggestion("No"));
