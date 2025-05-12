@@ -20,8 +20,15 @@ const {
   handleInvestFunds,
   handleStoreInvestedAmount,
   handleInvestMoreDecision,
-  handleExploreFundsFlow,
+  handleExploreFundsFlow
 } = require("./flows/explore-funds/exploreFundsFlow");
+
+const {
+  handleCategoryFallbackIntent,
+  handleFundFallbackContent,
+  handleIncorrectAmount,
+  handleInvestOptionFallback
+} = require("./flows/explore-funds/exploreFundsFlowFallback");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -48,6 +55,10 @@ app.post("/webhook", express.json(), (req, res) => {
   intentMap.set("Transaction-history", handleTransactionHistory);
   intentMap.set("Transaction-List", handleFinancialYearSelection);
   intentMap.set("Invest-More", handleInvestMoreDecision);
+  intentMap.set("Fallback-Category", handleCategoryFallbackIntent);
+  intentMap.set("Fallback-Fund", handleFundFallbackContent)
+  intentMap.set("Fallback-Amount", handleIncorrectAmount)
+  intentMap.set("Fallback-Invest", handleInvestOptionFallback);
   agent.handleRequest(intentMap);
 });
 

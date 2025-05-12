@@ -44,4 +44,4 @@ const withContextManagement = (handler, options = {}) => {
     };
 }
 
-module.exports = { withContextManagement, isValidPhoneNumber, getFinancialYearRange, getTransactionsData, saveTransactionsData };
+module.exports = { withContextManagement, isValidPhoneNumber, getFinancialYearRange, getTransactionsData, saveTransactionsData, clearAllExcept };

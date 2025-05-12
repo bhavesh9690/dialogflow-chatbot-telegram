@@ -46,7 +46,7 @@ const handleFinancialYearSelection = (agent) => {
     message += 'Date       | Portfolio          | Amount          \n';
     message += '-----------|--------------------|-----------------\n';
     filtered.slice(-3).forEach(row => {
-        message += `${row.date} | ${row.fund_name} | ₹${row.amount}\n`;
+        message += `${row.date} | ${row.fund_name}  | ₹${row.amount}\n`;
     });
 
     agent.context.set({ name: 'awaiting_investment_choice', lifespan: 1 });

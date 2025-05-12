@@ -22,45 +22,63 @@
       },
       {
         "date": "2025-05-09",
-        "amount": "10000",
+        "amount": 10000,
         "fund_id": "MF003",
         "fund_name": "Gamma Balanced Fund"
       },
       {
         "date": "2025-05-10",
-        "amount": "2000",
+        "amount": 2000,
         "fund_id": "MF003",
         "fund_name": "Gamma Balanced Fund"
       },
       {
         "date": "2025-05-10",
-        "amount": "1000",
+        "amount": 1000,
         "fund_id": "MF001",
         "fund_name": "Alpha Growth Fund"
       },
       {
         "date": "2025-05-10",
-        "amount": "1000",
+        "amount": 1000,
         "fund_id": "MF002",
         "fund_name": "Beta Income Fund"
       },
       {
         "date": "2025-05-10",
-        "amount": "10000",
+        "amount": 10000,
         "fund_id": "MF003",
         "fund_name": "Gamma Balanced Fund"
       },
       {
         "date": "2025-05-10",
-        "amount": "1000",
+        "amount": 1000,
         "fund_id": "MF001",
         "fund_name": "Alpha Growth Fund"
       },
       {
         "date": "2025-05-10",
-        "amount": "1000",
+        "amount": 1000,
         "fund_id": "MF001",
         "fund_name": "Alpha Growth Fund"
+      },
+      {
+        "date": "2025-05-11",
+        "amount": 5000,
+        "fund_id": "MF001",
+        "fund_name": "Alpha Growth Fund"
+      },
+      {
+        "date": "2025-05-12",
+        "amount": 1000,
+        "fund_id": "MF002",
+        "fund_name": "Beta Income Fund"
+      },
+      {
+        "date": "2025-05-12",
+        "amount": 1000,
+        "fund_id": "MF003",
+        "fund_name": "Gamma Balanced Fund"
       }
     ]
   },
@@ -86,13 +104,13 @@
     "transactions": [
       {
         "date": "2025-05-09",
-        "amount": "5000",
+        "amount": 5000,
         "fund_id": "MF001",
         "fund_name": "Alpha Growth Fund"
       },
       {
         "date": "2025-05-09",
-        "amount": "10000",
+        "amount": 10000,
         "fund_id": "MF002",
         "fund_name": "Beta Income Fund"
       }
@@ -103,7 +121,7 @@
     "transactions": [
       {
         "date": "2025-05-09",
-        "amount": "5000",
+        "amount": 5000,
         "fund_id": "MF003",
         "fund_name": "Gamma Balanced Fund"
       }
@@ -114,7 +132,7 @@
     "transactions": [
       {
         "date": "2025-05-09",
-        "amount": "5000",
+        "amount": 5000,
         "fund_id": "MF003",
         "fund_name": "Gamma Balanced Fund"
       }
@@ -125,7 +143,7 @@
     "transactions": [
       {
         "date": "2025-05-10",
-        "amount": "10000",
+        "amount": 10000,
         "fund_id": "MF005",
         "fund_name": "Omega Liquid Fund"
       }
@@ -135,7 +153,7 @@
     "transactions": [
       {
         "date": "2025-05-10",
-        "amount": "5000",
+        "amount": 5000,
         "fund_id": "MF003",
         "fund_name": "Gamma Balanced Fund"
       }
@@ -146,7 +164,7 @@
     "transactions": [
       {
         "date": "2025-05-10",
-        "amount": "5000",
+        "amount": 5000,
         "fund_id": "MF002",
         "fund_name": "Beta Income Fund"
       }
@@ -157,7 +175,7 @@
     "transactions": [
       {
         "date": "2025-05-10",
-        "amount": "2000",
+        "amount": 2000,
         "fund_id": "MF005",
         "fund_name": "Omega Liquid Fund"
       }
@@ -168,9 +186,53 @@
     "transactions": [
       {
         "date": "2025-05-10",
-        "amount": "2000",
+        "amount": 2000,
         "fund_id": "MF001",
         "fund_name": "Alpha Growth Fund"
+      }
+    ]
+  },
+  {
+    "mobile": "3216549870",
+    "transactions": [
+      {
+        "date": "2025-05-12",
+        "amount": 200,
+        "fund_id": "MF001",
+        "fund_name": "Alpha Growth Fund"
+      }
+    ]
+  },
+  {
+    "mobile": "1234567890",
+    "transactions": [
+      {
+        "date": "2025-05-12",
+        "amount": 810,
+        "fund_id": "MF001",
+        "fund_name": "Alpha Growth Fund"
+      }
+    ]
+  },
+  {
+    "mobile": "7894561231",
+    "transactions": [
+      {
+        "date": "2025-05-12",
+        "amount": 220,
+        "fund_id": "MF005",
+        "fund_name": "Omega Liquid Fund"
+      }
+    ]
+  },
+  {
+    "mobile": "7894561234",
+    "transactions": [
+      {
+        "date": "2025-05-12",
+        "amount": 410,
+        "fund_id": "MF003",
+        "fund_name": "Gamma Balanced Fund"
       }
     ]
   }
