@@ -1,4 +1,4 @@
-const { Suggestion, Payload } = require('dialogflow-fulfillment');
+const { Suggestion } = require('dialogflow-fulfillment');
 const configsData = require('../data/constants');
 const { isValidPhoneNumber, clearAllExcept } = require("../utilities/utils");
 const { handlePortfolioFlowAfterContactValidation } = require("./portfolio/portfolioFlow");

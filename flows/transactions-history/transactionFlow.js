@@ -1,4 +1,4 @@
-const { Suggestion, Payload } = require('dialogflow-fulfillment');
+const { Suggestion } = require('dialogflow-fulfillment');
 const { getFinancialYearRange, withContextManagement, getTransactionsData } = require("../../utilities/utils");
 const { setUIRichresponse } = require("../../utilities/utils");
 

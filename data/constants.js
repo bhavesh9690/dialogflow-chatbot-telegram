@@ -3,7 +3,6 @@ module.exports = {
     quickSuggestions: ["Portfolio Evaluation", "Explore Funds", "Transaction History"],
     mobileNumberText: "Kindly enter registered contact number",
     fundCategoryText: "Kindly select one of the categories to see funds:",
-    fundCategories: ['Equity', 'Debt', 'Hybrid'],
     mobileNumberInvalidText: "Please enter valid 10 digit mobile number",
     portfolioText: "Kindly select one of your portfolios",
     fundOptions: {
